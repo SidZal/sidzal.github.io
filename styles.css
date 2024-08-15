@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: whitesmoke;
+    background-color: #171212;
 }
 
 img.mosaic {
@@ -13,7 +13,7 @@ h1.name {
     margin: -12px 0 0 0;
 
     font-size: 24px;
-    color:rgb(219, 253, 222)
+    color:#B1E0FB
 }
 
 h1.title {
@@ -22,18 +22,18 @@ h1.title {
     margin: -28px 0 0 0;
 
     font-size: 16px;
-    color:rgb(219, 253, 222)
+    color:#B1E0FB
 }
 
 
 ul {
     padding-right: 15%;
-    max-height: 56px;
+    max-height: 59px;
 
     overflow: hidden;
     list-style-type: none;
 
-    background-color: rgb(97, 131, 102);
+    background-color: #02224F;
     position: sticky;
 
     box-shadow: 0px 0px 20px 1px rgb(0, 0, 0);
@@ -52,11 +52,11 @@ li.header {
 
 li.page {
     float: right;
-    border-left: 1px solid whitesmoke;
+    border-left: 1px solid #B1E0FB;
 }
 
 li.last {
-    border-right: 1px solid whitesmoke;
+    border-right: 1px solid #B1E0FB;
 }
 
 a.menu-link {
@@ -66,12 +66,12 @@ a.menu-link {
     text-align: center;
 
     font-size: 16px;
-    color: white;
+    color: #B1E0FB;
     text-decoration: none;
 }
 
 a.active {
-    background-color:rgb(6, 136, 93);
+    background-color:rgb(124, 120, 155);
 }
 
 
@@ -135,7 +135,7 @@ a.active {
 
 div.mainDivider {
     position: relative;
-    background-color: rgb(97, 131, 102);
+    background-color: #02224F;
     
     width: 100%;
     height: 56px;
@@ -147,21 +147,18 @@ div.main {
     overflow: auto;
     z-index: 0;
 
-    background-color: rgb(197, 226, 209);
-    border-radius: 15px;
-
     max-width: 1536px;
+    min-height: 800px;
 
     padding: 10px;
     margin: 15px auto;
-    box-shadow: 0px 0px 4px 0px black;
 }
 
 img.headshot {
     float: left;
     max-width: 450px;
 
-    border: 3px solid black;
+    border: 3px solid antiquewhite;
     margin: 50px 20px 50px 5%;
 }
 
@@ -169,12 +166,13 @@ p#biography {
     left: 15px;
 
     font-size: 20px;
+    color: antiquewhite;
     margin: 50px 0;
 }
 
 div.footer {
     position: relative;
-    background-color: rgb(150, 150, 150);
+    background-color: #C1CFDA;
     
     width: 100%;
     height: 100px;
@@ -185,7 +183,7 @@ div.portfolio-grid {
     gap: 20px;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto;
-    padding: 0 150px;
+    padding: 0;
     margin: 0 auto;
 }
 
@@ -194,7 +192,7 @@ div.portfolio-grid {
     width: 400px;
     place-self: center;
 
-    box-shadow: 0 0 5px 0 black;
+    box-shadow: 0 0 10px 0 antiquewhite;
     overflow: hidden;
 
     border-radius: 25px;
@@ -217,7 +215,7 @@ img.project-thumbnail {
     white-space: normal;
     z-index: 2;
 
-    background-color: antiquewhite;
+    background-color: #02224F;
 }
 
 .project-title {
@@ -226,18 +224,20 @@ img.project-thumbnail {
 
     width: 100%;
 
-    background-color:rgb(150, 150, 150);
+    background-color:#C1CFDA;
 
     padding: 10px 0;
 
     text-align: center;
     font-size: 25px;
+    box-shadow: 0 0 10px 0 black;
 }
 
 .project-desc {
     text-align: center;
     margin: 4px 10px;
     font-size: 18px;
+    color: antiquewhite;
 }
 
 .project-portal{

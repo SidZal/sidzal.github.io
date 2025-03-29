@@ -1,3 +1,11 @@
+:root {
+    --bg: #363636;
+    --bg-light: #6b6b6b;
+    --accent: rgb(153, 179, 161);
+    --text-highlight: #ffffff;
+    --text-lowlight: #6e6e6e;
+}
+
 body {
     margin: 0;
     background-color: #1f1f1f;
@@ -7,81 +15,72 @@ body {
     width: 100%;
 }
 
-h1.name {
-    float: left;
-    padding-left: 15%;
-    margin: -12px 0 0 0;
+div.banner {
+    height: 60px;
 
-    font-family: sans-serif;
-    font-size: 24px;
-    color:white
+    background-color: var(--bg);
+
+    box-shadow: 0 0 20px 0 rgb(0, 0, 0);
+    z-index: 1;
 }
 
-h1.title {
+a.header {
     float: left;
     padding-left: 15%;
-    margin: -28px 0 0 0;
 
+    text-decoration: none;
+}
+
+div.name {
+    position: relative;
+    top: 6px;
+
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--text-highlight);
+}
+
+div.title {
     font-family: sans-serif;
     font-style: italic;
     font-weight: bold;
     font-size: 16px;
-    color:#fcff4f;
+    color: var(--accent);
 }
 
-
-ul {
+div.menu-content {
+    float: right;
     padding-right: 15%;
-    max-height: 59px;
 
-    overflow: hidden;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
     list-style-type: none;
-
-    background-color: #363636;
-    position: sticky;
-    top: 0;
-
-    box-shadow: 0 0 20px 0 rgb(0, 0, 0);
-    margin: 0;
-    overflow: visible;
-    z-index: 1;
-}
-
-menu {
-    list-style-type:none;
-}
-
-li.header {
-    margin: 0px;
 }
 
 li.page {
-    float: right;
-    border-left: 1px solid #fcff4f;;
-}
+    display: flex;
+    padding: 0 20px;
 
-li.last {
-    border-right: 1px solid #fcff4f;;
+    float: right;
 }
 
 a.menu-link {
-    display: block;
-    padding: 20px 12px;
-    
-    text-align: center;
-
-    font-family: sans-serif;
-    font-size: 16px;
-    color: #e6e6e6;
+    font-family: monospace;
+    font-size: 14px;
+    color: var(--text-highlight);
     text-decoration: none;
 }
 
 a.active {
-    background-color:rgb(124, 120, 155);
+    color: var(--text-lowlight);
 }
 
 
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
 
     menu {
         position: relative;
@@ -137,11 +136,11 @@ a.active {
     a.active {
         background-color:rgb(126, 118, 109);
     }
-}
+} */
 
 div.mainDivider {
     position: relative;
-    background-color: #363636;
+    background-color: var(--bg);
     
     width: 100%;
     height: 56px;
@@ -154,32 +153,42 @@ div.main {
     z-index: 0;
 
     max-width: 1536px;
-    min-height: 600px;
 
     padding: 10px;
-    margin: 65px auto;
+    margin: 20px auto 65px;
 }
 
-img.headshot {
-    float: left;
-    max-width: 450px;
-
-    border: 2px solid #fcff4f;;
+.std {
+    border: 2px solid var(--accent);
     margin: 0 60px 60px 5%;
     border-radius: 15px;
 }
 
-p#biography {
+p.std-txt {
     position: relative;
 
-    font-family: sans-serif;
+    font-family: serif;
     font-size: 20px;
-    color: white;
+    color: var(--text-highlight);
+}
+
+p.title-txt{
+    font-family: serif;
+    position: relative;
+
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+
+    color: var(--text-highlight);
+    font-size: 50px;
+    font-weight: bold;
 }
 
 div.footer {
     position: relative;
-    background-color: #6b6b6b;
+    background-color: var(--bg-light);
     
     width: 100%;
     height: 120px;
@@ -189,7 +198,7 @@ div.footer {
 p.footnote {
     text-align: center;
     
-    color:#e0e0e0;
+    color:var(--text-highlight);
     padding: 10px 0 0 0;
 }
 
@@ -213,7 +222,7 @@ p.footnote {
 div.portfolio-grid {
     display: grid;
     gap: 20px;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     grid-template-rows: auto;
     padding: 0;
     margin: 20px auto;
@@ -233,7 +242,7 @@ img.project-thumbnail {
     height: auto;
 
     border-radius: 10px;
-    border: 1px solid #fcff4f;
+    border: 1px solid var(--accent);
     position: static;
     z-index: 0;
 
@@ -255,17 +264,19 @@ img.project-thumbnail {
 
 .project-title {
     position: relative;
+    font-family: serif;
 
     width: 100%;
     padding: 20px 0 10px;
 
-    color: white;
+    color: var(--text-highlight);
     font-size: 25px;
     font-weight: bold;
 }
 
 .project-desc {
     margin: 0;
+    font-family: serif;
     font-size: 18px;
     color: rgb(167, 167, 167);
 }

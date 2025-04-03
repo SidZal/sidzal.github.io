@@ -1,2 +1,2 @@
-my portfolio
-sidzal.github.io
+# My portfolio
+[Website](sidzal.github.io)

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <title>
         Home - Siddharth Zalavadia
@@ -10,27 +11,17 @@
     </head>
 
     <body>
-        <div class = "banner">
-            <a href = "/" class = "header">
-                <div class = "name">SIDDHARTH ZALAVADIA</div>
-                <div class = "title">Mechanical Engineer</div>
-            </a>
-
-            <div class = "menu-content">
-                <li class = "page"><a class = "menu-link active" href="/">HOME</a></li>
-                <li class = "page"><a class = "menu-link" href="/portfolio/">PORTFOLIO</a></li>
-            </div>
-        </div>
+        <div id = "banner" active-element = "home"></div>
 
         <video class = "mosaic" autoplay muted loop>
-            <source src="header.mp4">
+            <source src="/media/home/header.mp4">
         Failed to load video
         </video>
 
         <div class = "mainDivider"></div>
 
         <div class = "main">
-            <img class = "std" src="headshot.png" style="float:left; max-width: 450px;">
+            <img class = "std" src="/media/home/headshot.png" style="float:left; max-width: 450px;">
             <p class = "std-txt" >
                 Hi! My name is Siddharth Zalavadia, and I am a Mechanical Engineer currently finishing concurrent Master's and Bachelor's degrees at UCLA. 
                 I intend to graduate in June of 2025, and I am currently looking for full-time engineering positions.
@@ -40,21 +31,8 @@
             </p>
         </div>
 
-        <div class = "footer">
-            <p class = "footnote">
-                Siddharth Zalavadia
-            </p>
-            <div class = "profile-link-container">
-                <a href = "https://github.com/SidZal/">
-                    <img class = "profile-link" src="github.png">
-                </a>
-                <a href = "https://www.linkedin.com/in/sidzal/">
-                    <img class = "profile-link" src="linkedin.png">
-                </a>
-            </div>
-        </div>
-        
-        
-
+        <div id = "footer"><div>
     </body>
+
+    <script src = "/pagetemplate.js"></script>
 </html>

@@ -1,2 +1,2 @@
 # My portfolio
-[Website](sidzal.github.io)
+[Website](https://sidzal.github.io/)

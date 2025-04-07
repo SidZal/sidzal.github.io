@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>
+        Rigid Buoyancy Engine - Siddharth Zalavadia
+    </title>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <div id = "banner" active-element = "portfolio"></div>
+
+        <div class = "main" >
+            <div class = "article-header">
+                <p class = "header-txt">Bi-flagellated Robot</p>
+                <a class = "back-link" href = "/portfolio/">BACK</a>
+            </div>
+
+            <div class = "flex-entry">
+                <p class = "std-txt" style = "margin-right: 50px;">
+                    <tab></tab> As part of my work with the Structures-Computer Interaction Lab at UCLA, I designed and assembled the robot diagrammed in this schematic.
+                    It is a bio-inspired bi-flagellated robot that is designed to collect rotational data via the on-board IMU.
+                    Flagella are the coily tails of bacteria, which help them traverse fluid at their microscopic level, where viscous forces dominate inertial forces.
+                    The robot provided the experimental data to compare against simulation data, enabling future research around controlling these motions.
+                    In this research, control was limited to either manual control using joysticks as seen in the video below or preset procedures defined in a micro-controller.
+                </p>
+                <img class = "std" style = "flex-basis: 500px; flex-shrink: 0;" src = "./schematic.png">
+            </div>
+
+            <div class = "flex-entry">
+                <video class = "std" style = "max-width: 500px; margin: 30px;" autoplay muted loop>
+                    <source src = "./control.mp4">
+                </video>
+            </div>
+
+            <div class = "flex-entry">
+                <p class = "std-txt">
+                    <tab></tab>This work was part of a paper studying attitude adjustment for bi-flagellated robots, which I presented at
+                    the 2024 IEEE RoboSoft Conference. The full paper can be found 
+                    <a href = "https://ieeexplore.ieee.org/document/10521926" class = "txt-link">here</a>. 
+                    Thank you to my direct supervisor, Zhuonan Hao, and our PI, Dr. Khalid Jawed, for their direction and guidance in this work.
+                </p>
+            </div>
+        </div>
+
+        <div id = "footer"></div>
+    </body>
+    
+    <script src = "/pagetemplate.js"></script>
+</html>

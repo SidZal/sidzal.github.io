@@ -152,7 +152,7 @@ tab {
 }
 
 .std-txt {
-    font-family: sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 24px;
     color: var(--text-midlight);
 }
@@ -261,7 +261,49 @@ tab {
     scale: 1.05;
 }
 
-@media only screen and (max-width: 800px) {
+.coursework-grid {
+    display: grid;
+    grid-template-columns:  auto auto;
+    justify-content: space-evenly;
+    row-gap: 30px;
+}
+
+.quarter-grid {
+    width: 600px;
+    background-color: var(--bg);
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid var(--accent);
+
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+.course {
+    margin: 0;
+    padding: 5px 0 5px 4px;
+    border-bottom: 1px solid var(--text-midlight);
+
+    color: var(--text-highlight);
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.grade {
+    margin: 0;
+    padding: 5px 0;
+    border-left: 1px solid var(--text-midlight);
+    border-bottom: 1px solid var(--text-midlight);
+
+    text-align: center;
+
+    color: var(--text-highlight);
+    font-family: monospace;
+    font-size: 18px;
+    
+}
+
+@media only screen and (max-width: 850px) {
 
     .menu-dropdown {
         position: relative;
@@ -307,5 +349,11 @@ tab {
 
     .flex-entry {
         flex-direction: column;
+    }   
+}
+
+@media only screen and (max-width: 1300px) {
+    .coursework-grid {
+        grid-template-columns: auto;
     }
 }

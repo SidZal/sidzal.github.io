@@ -1,6 +1,7 @@
 :root {
     --bg: #363636;
     --bg-light: #6b6b6b;
+    --bg-dark: #1f1f1f;
     --accent: rgb(153, 179, 161);
     --text-highlight: #ffffff;
     --text-midlight: #d8d8d8;
@@ -10,7 +11,7 @@
 
 html, body {
     margin: 0;
-    background-color: #1f1f1f;
+    background-color: var(--bg-dark);
     height: 100%;
 }
 
@@ -198,7 +199,7 @@ tab {
     display: grid;
 
     gap: 20px;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     grid-template-rows: auto;
     padding: 0;
     margin: 50px auto;
@@ -303,6 +304,16 @@ tab {
     
 }
 
+@media only screen and (max-width: 1300px) {
+    .coursework-grid {
+        grid-template-columns: auto;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: auto auto;
+    }
+}
+
 @media only screen and (max-width: 850px) {
 
     .menu-dropdown {
@@ -335,7 +346,7 @@ tab {
 
         position: absolute;
         right: 0;
-        background-color: #1f1f1f;
+        background-color: var(--bg-dark);
         width: 100px;
         overflow: hidden;
         box-shadow: 0 0 5px 1px black;
@@ -349,11 +360,9 @@ tab {
 
     .flex-entry {
         flex-direction: column;
-    }   
-}
-
-@media only screen and (max-width: 1300px) {
-    .coursework-grid {
+    }  
+    
+    .portfolio-grid {
         grid-template-columns: auto;
     }
 }

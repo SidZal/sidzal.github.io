@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>
+        Robotic Timekeeping Arm - Siddharth Zalavadia
+    </title>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <div id = "banner" active-element = "portfolio"></div>
+
+        <div class = "main" >
+            <div class = "article-header">
+                <p class = "header-txt">Robotic Timekeeping Arm</p>
+                <a class = "back-link" href = "/portfolio/">BACK</a>
+            </div>
+
+            <div class = "flex-entry">
+                <p class = "std-txt" style = "margin-right: 50px;">
+                    <tab></tab> As part of the UCLA course MAE C263A, I worked on a group project focused on making a robotic system
+                    to apply what we had learned in class given a kit that included several Dynamixel MX-28AR servo motors. Since the focus of the class was on
+                    the kinematics of robotics, we opted to create a robot that did not need feedback or high-speeds to achieve its task. The robot shown here is
+                    the final result: a 2R planar arm attached to a prismatic joint to move the planar links up and down, with the ability to write and erase on
+                    the whiteboard with a pen attached to the end effector. We chose to demonstrate the robot by having it continuously write out
+                    time in a 24-hour, hours and minutes format.
+                    <br><br>
+
+                    <tab></tab> I was largely responsible for programming the robot's operation. I abstracted the problem into
+                    two primary classes: a low-level servos control class that provided simple, task-specific functions to work with the Dynamixel SDK library and
+                    a kinematics class to compute inverse kinematics and plan trajectories. Another group member wrote code that helps trajectory planning by
+                    providing arrays of coordinates for each number. In the demonstration below, you can see the robot updating the time from 1:09 pm (1309) to 1:10 pm (1310).
+                </p>
+                <img class = "std" style = "max-height: 500px;" src = "./bot_overview.jpg">
+            </div>
+
+            <div class = "flex-entry">
+                <video class = "std" style = "max-width: 700px; margin: 30px;" autoplay muted loop>
+                    <source src = "./0000-1800.mp4">
+                </video>
+            </div>
+
+            <div class = "flex-entry">
+                <p class = "std-txt">
+                    <tab></tab>The GitHub for this project is available
+                    <a href = "https://github.com/SidZal/MAE-263A-F24-Project-Group-11" target = "_blank" ref = "noopener noreferrer" class = "txt-link">here</a>. 
+                    Thank you to my group members for their work on this project.
+                </p>
+            </div>
+        </div>
+
+        <div id = "footer"></div>
+    </body>
+    
+    <script src = "/pagetemplate.js"></script>
+</html>

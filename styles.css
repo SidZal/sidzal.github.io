@@ -47,23 +47,10 @@ html, body {
 }
 
 .name {
-    position: relative;
-    top: 6px;
-
     font-family: monospace;
     font-weight: bold;
     font-size: 24px;
     color: var(--text-highlight);
-}
-
-.title {
-    float: left;
-
-    font-family: sans-serif;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 16px;
-    color: var(--accent);
 }
 
 .menu-dropdown {
@@ -274,7 +261,7 @@ tab {
 }
 
 .quarter-grid {
-    width: 600px;
+    max-width: 600px;
     background-color: var(--bg);
     padding: 20px;
     border-radius: 25px;
@@ -352,6 +339,7 @@ tab {
         background-color: var(--bg-dark);
         box-shadow: 0 0 5px 1px black;
         border-radius: 5px;
+        border: 2px solid var(--text-highlight)
     }
 
     .flex-entry {

@@ -26,12 +26,23 @@ html, body {
 
     box-shadow: 0 0 20px 0 rgb(0, 0, 0);
     z-index: 1;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.banner-box {
+    position: relative;
+    height: 100%;
+    width: 70%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header {
-    float: left;
-    padding: 0 0 0 15%;
-
     text-decoration: none;
 }
 
@@ -56,23 +67,16 @@ html, body {
 }
 
 .menu-dropdown {
-    height: 100%;
+    position: relative;
 }
 
 .menu-content {
-    float: right;
-    padding-right: 15%;
-
     height: 100%;
     display: flex;
     align-items: center;
+    gap: 40px;
 
     list-style-type: none;
-}
-
-.page {
-    padding: 0 20px;
-    float: right;
 }
 
 .menu-link {
@@ -315,15 +319,8 @@ tab {
 }
 
 @media only screen and (max-width: 850px) {
-
     .menu-dropdown {
-        position: relative;
-        right: 15%;
-
-        float: right;
-        height: 20px;
-
-        padding: 20px 0;
+        padding: 20px;
     }
 
     .menu-line {
@@ -336,26 +333,25 @@ tab {
 
     .menu-content {
         display: none;
+
     }
 
     .menu-dropdown:hover .menu-content {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        z-index: 3;
+
+        padding: 10px;
+        height: auto;
+
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        z-index: 1;
+        gap: 20px;
 
-        position: absolute;
-        right: 0;
         background-color: var(--bg-dark);
-        width: 100px;
-        overflow: hidden;
         box-shadow: 0 0 5px 1px black;
-        padding: 0 0 10px 0;
-    }
-
-    .page {
-        padding: 0;
-        text-align: center;
+        border-radius: 5px;
     }
 
     .flex-entry {

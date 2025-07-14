@@ -153,6 +153,11 @@ tab {
     color: var(--text-link);
 }
 
+.embedded-pdf {
+    width: 80%;
+    height: 100vh;
+}
+
 .footer {
     position: relative;
     background-color: var(--bg-light);

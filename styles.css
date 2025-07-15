@@ -156,6 +156,7 @@ tab {
 .embedded-pdf {
     width: 80%;
     height: 100vh;
+    background-color: white;
 }
 
 .footer {
@@ -195,7 +196,7 @@ tab {
     display: grid;
 
     gap: 20px;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     grid-template-rows: auto;
     padding: 0;
     margin: 50px auto;
@@ -298,6 +299,12 @@ tab {
     font-family: monospace;
     font-size: 18px;
     
+}
+
+@media only screen and (max-width: 1700px) {
+    .portfolio-grid {
+        grid-template-columns: auto auto auto;
+    }
 }
 
 @media only screen and (max-width: 1300px) {

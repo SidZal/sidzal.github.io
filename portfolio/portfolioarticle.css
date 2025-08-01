@@ -1,0 +1,28 @@
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 50px;
+}
+
+.header-txt{
+    margin: 0;
+    font-family: serif;
+    color: var(--text-header);
+    font-size: 50px;
+    font-weight: bold;
+
+    padding: 10px;
+    border-bottom: 8px solid var(--accent);
+    border-radius: 20px;
+}
+
+.back-link {
+    font-family: monospace;
+    font-size: 16px;
+    color: var(--text-header);
+    text-decoration: none;
+
+    border-bottom: 2px solid var(--accent);
+}

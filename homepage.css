@@ -8,5 +8,5 @@
     height: 40px;
 
     background-color: var(--header-bg);
-    box-shadow: 0px -20px 20px -19px rgb(0, 0, 0);
+    box-shadow: 0 -2px 10px black;
 }

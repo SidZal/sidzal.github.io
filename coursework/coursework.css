@@ -2,7 +2,8 @@
     display: grid;
     grid-template-columns:  auto auto;
     justify-content: space-evenly;
-    row-gap: 30px;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
 .quarter-grid {

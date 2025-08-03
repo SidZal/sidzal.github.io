@@ -7,7 +7,6 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" href="./portfoliogrid.css"> -->
     </head>
 
     <style>
@@ -17,55 +16,31 @@
 
     <body>
         <div id = "banner" active-element = "portfolio"></div>
-        <div class = "portfolio-grid">
-            <a class = "project-grid" href="/portfolio/airhockey/">
 
-                <img class = "project-thumbnail" src = "/portfolio/airhockey/arm.jpg">
+        <div class = "main">
+            <div class = "portfolio-grid">
                 
-                <header class = "project-title">Tabletop Game Planar Arm</header>
-                <p class = "project-desc"> 
+                <entry folder="airhockey" thumbnail="arm.jpg" title="Tabletop Game Planar Arm">
                     UCLA open group project for MAE C263C, a robot arm that plays a game similar to air hockey or Pong
-                </p>
+                </entry>
 
-            </a>
-
-            <a class = "project-grid" href="/portfolio/clockarm/">
-
-                <img class = "project-thumbnail" src = "/portfolio/clockarm/clock_thumbnail.jpg">
-                
-                <header class = "project-title">Robotic Timekeeping Arm</header>
-                <p class = "project-desc"> 
+                <entry folder="clockarm" thumbnail="clock_thumbnail.jpg" title="Robotic Timekeeping Arm">
                     UCLA open group project for MAE C263A, a robot arm that continuously writes out the time on a whiteboard
-                </p>
+                </entry>
 
-            </a>
-
-            <a class = "project-grid" href="/portfolio/biflagella/">
-
-                <img class = "project-thumbnail" src = "/portfolio/biflagella/biflagella_thumbnail.png">
-                
-                <header class = "project-title">Bi-flagellated Robot</header>
-                <p class = "project-desc"> 
+                <entry folder="biflagella" thumbnail="biflagella_thumbnail.png" title="Bi-flagellated Robot">
                     UCLA research aimed at investigating bacteria-like flagella applied to robotic locomotion through high-density fluids
-                </p>
+                </entry>
 
-            </a>
-            
-            <a class = "project-grid" href="/portfolio/hover/">
-
-                <img class = "project-thumbnail" src = "/portfolio/hover/hover_thumbnail.jpg">
-                
-                <header class = "project-title">Rigid Buoyancy Engine</header>
-                <p class = "project-desc">
+                <entry folder="hover" thumbnail="hover_thumbnail.jpg" title="Rigid Buoyancy Engine">
                     Robot designed to assist in UCLA research of robotic locomotion through high-density fluids
-                </p>
-
-            </a>
-
-            
+                </entry>
+                
+            </div>
         </div>
-
+            
         <div id = "footer"></div>
     </body>
     <script src = "/pagetemplate.js"></script>
+    <script src = "./entrytemplate.js"></script>
 </html>

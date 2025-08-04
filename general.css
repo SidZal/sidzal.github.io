@@ -220,9 +220,3 @@ tab {
     border: 2px solid var(--accent);
     border-radius: 15px;
 }
-
-.flex-entry {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}

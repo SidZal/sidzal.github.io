@@ -18,59 +18,67 @@
         <div id = "banner" active-element = "portfolio"></div>
 
         <div class = "main" >
-            <div class = "article-header">
-                <p class = "header-txt">Rigid Buoyancy Engine</p>
-                <a class = "back-link" href = "/portfolio/">BACK</a>
+            <div class = "article-container">
+                <p class = "article-title text-title">
+                    Rigid Buoyancy Engine
+                </p>
+
+                <div class = "article-text">
+                    <p class = "text-standard">
+                        <tab></tab>A buoyancy engine is a device that is designed to control the buoyant force on a submerged object to propel it vertically through the fluid.
+                        Buoyant force is equal to the product of fluid density, volume displaced, and gravitational acceleration. 
+                        Ignoring the effects of drag or friction, we can equate this force to weight to find that
+                        a submerged object is in static equilibrium when its mass is equal to the fluid density times volume displaced. 
+                        Typically, buoyancy engines include pressurized tanks of gas that inflate and deflate balloon-like limbs to control volume with constant mass, thus
+                        controlling buoyant force.
+                        <br><br>
+                        <tab></tab>In this project, I was tasked with developing a rigid buoyancy engine for viscous fluids, 
+                        as part of larger research surrounding robotic locomotion through viscous fluids.
+                        A rigid body allows more control as the buoyant force on other engines may not be perfectly aligned against gravity as the balloon volume inflates in complex shapes.
+                        We can achieve this rigidity with two threaded shells, rotated by a motor.
+                        <br><br>
+                        <tab></tab>The diagram below shows the exploded view of the prototype in SOLIDWORKS.
+                        Early testing of the 3D-printed threads is also shown below.
+                        The motor is fixed to one shell as it rotates the other, increasing or decreasing the cylindrical body's height, and thus, its volume.
+                    </p>
+                </div>
+
+                <div class = "article-media-section">
+                    <img class = "article-media-section-media acc-border" src="/portfolio/hover/hoverexp.png">                                                   
+                    <video class = "article-media-section-media acc-border" autoplay muted loop>
+                        <source src="/portfolio/hover/print_prototype.mp4">
+                        Failed to load video
+                    </video>
+                </div>
+
+                <div class = "article-text">
+                    <video class = "article-square-media float-top-right acc-border" autoplay muted loop>
+                        <source src="/portfolio/hover/action.mp4">
+                        Failed to load video
+                    </video> 
+                    <p class = "text-standard">
+                        <tab></tab>Our working fluid was liquid glycerin, which has a density of about 1.26 g/cm<sup>3</sup>. It is not conductive, so we are not concerned with it getting near the electronics,
+                        however the inside of the shells still required some sealing to ensure the volume does not fill up with the dense fluid and throw off the force balance.
+                        Counter-weights were also placed inside the shell
+                        to bring the force balance between gravity and buoyancy to near equilibrium, 
+                        so changes in volume can allow for negative or positive forces in the vertical direction.
+                        <br><br>
+                        <tab></tab>In this video, we can see the system operating with manual control. As I actuate the system to adjust the device's volume,
+                        the buoyant force becomes stronger or weaker than gravity accordingly, resulting in upwards or downwards motion respectively.
+                        <br><br>
+                        <tab></tab>Thank you to my direct supervisor, Zhuonan Hao, and our PI, Dr. Khalid Jawed, 
+                        for their direction and guidance in this work.
+                    </p>
+                </div>
+                
+                <a class = "back-link-container" href = "/portfolio/">
+                    <p class = "back-link">
+                        BACK
+                    </p>
+                </a>
+
             </div>
             
-            <div class = "flex-entry">
-                <p class = "text-standard" style = "margin-right: 50px;">
-                    <tab></tab>A buoyancy engine is a device that is designed to control the buoyant force on a submerged object to propel it vertically through the fluid.
-                    Buoyant force is equal to the product of fluid density, volume displaced, and gravity. 
-                    Ignoring the effects of drag or friction, we can equate this force to weight to find that
-                    a submerged object is in static equilibrium when its mass is equal to the fluid density times volume displaced. 
-                    Typically, buoyancy engines include pressurized tanks of gas that inflate and deflate balloon-like limbs to control volume with constant mass, thus
-                    controlling buoyant force.
-                    <br><br>
-                    <tab></tab>In this project, I was tasked with developing a rigid buoyancy engine for viscous fluids, 
-                    as part of larger research surrounding robotic locomotion through viscous fluids.
-                    A rigid body allows more control as the buoyant force on other engines may not be perfectly aligned against gravity as the balloon volume inflates in complex shapes.
-                    We can achieve this rigidity with two threaded shells, rotated by a motor.
-                    The image here shows the exploded view of the prototype in SOLIDWORKS, which is then 3D-printed
-                    and early testing of the 3D-printed threads being motorized is also shown.
-                    The motor is fixed to one shell as it rotates the other, increasing or decreasing the cylindrical body's height, and thus, its volume.
-                </p>
-                <img class = "acc-border" src="/portfolio/hover/hoverexp.png" style="height: 400px;">
-            </div>
-
-            <div class = "flex-entry" style = "margin: 20px 0;">
-                <video class = "acc-border" style = "max-width: 700px;" autoplay muted loop>
-                    <source src="/portfolio/hover/print_prototype.mp4">
-                    Failed to load video
-                </video>
-            </div>
-
-            <div class = "flex-entry">
-                <video class = "acc-border" style= "height: 600px" autoplay muted loop>
-                    <source src="/portfolio/hover/action.mp4">
-                    Failed to load video
-                </video>
-                <p class = "text-standard" style = "margin-left: 50px;">
-                    <tab></tab> Our working fluid was liquid glycerin, which has a density of about 1.26 g/cm<sup>3</sup>. It is not conductive, so we are not concerned with it getting near the electronics,
-                    however the inside of the shells still required some sealing to ensure the volume does not fill up with the dense fluid and throw off the force balance.
-                    Counter-weights were also placed inside the shell
-                    to bring the force balance between gravity and buoyancy to near equilibrium, 
-                    so changes in volume can allow for negative or positive forces in the vertical direction.
-                    In this video, we can see the system operating with manual control. As I actuate the system to adjust the device's volume,
-                    the buoyant force becomes stronger or weaker than gravity accordingly, resulting in upwards or downwards motion respectively.
-                </p>
-            </div>
-
-            <div class = "flex-entry" style = "margin-top: 30px;">
-                <p class = "text-standard">
-                    Thank you to my direct supervisor, Zhuonan Hao, and our PI, Dr. Khalid Jawed, for their direction and guidance in this work.
-                </p>
-            </div>
         </div>
 
         <div id = "footer"></div>

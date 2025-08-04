@@ -1,21 +1,69 @@
-.article-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.article-container {
+    margin: 0 50px;
+    overflow: hidden;
 
-    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 40px;
 }
 
-.header-txt{
-    margin: 0;
-    font-family: serif;
-    color: var(--text-header);
-    font-size: 50px;
-    font-weight: bold;
+.article-title {
+    text-align: center;
+}
 
-    padding: 10px;
-    border-bottom: 8px solid var(--accent);
-    border-radius: 20px;
+.article-section {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.article-media-section {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+
+.article-media-section-media {
+    min-width: 0;
+    object-fit: cover;
+}
+
+.article-square-media {
+    width: 40%;
+}
+
+.article-vertical-media {
+    width: 15%;
+}
+
+.article-horizontal-media {
+    width: 60%;
+}
+
+.float-top-right {
+    float: right;
+    margin: 0 0 10px 30px;
+}
+
+.float-top-left {
+    float: left;
+    margin: 0 30px 10px 0;
+}
+
+.article-text {
+    width: 100%;
+    display: block;
+}
+
+.back-link-container {
+    text-decoration: none;
 }
 
 .back-link {
@@ -24,5 +72,44 @@
     color: var(--text-header);
     text-decoration: none;
 
-    border-bottom: 2px solid var(--accent);
+    padding: 5px 15px;
+    background: var(--header-bg);
+    border-radius: 20px;
+    border: 2px solid var(--accent);
+
+    scale: 1;
+    transition: scale 250ms;
+}
+
+.back-link-container:hover .back-link {
+    scale: 1.05;
+}
+
+@media only screen and (max-width: 850px) {
+    .article-media-section {
+        flex-direction: column;
+    }
+
+    .article-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+    }
+
+    .article-square-media {
+        width: 75%;
+    }
+
+    .article-vertical-media {
+        width: 100%;
+    }
+
+    .article-horizontal-media {
+        width: 100%;
+    }
+
+    .float-top-right, .float-top-left, .float-bottom-left, .float-bottom-right {
+        margin: 0;
+    }
 }

@@ -18,7 +18,88 @@
         <div id = "banner" active-element = "portfolio"></div>
 
         <div class = "main" >
-            <div class = "article-header">
+            <div class = "article-container">
+                <p class = "article-title text-title">
+                    Tabletop Game Planar Arm
+                </p>
+
+                <div class = "article-text">
+                    <img class = "article-square-media float-top-right acc-border" src = "./arena.jpg">
+                    <p class = "text-standard">
+                        <tab></tab> This robotic arm was made for a group project for the course MAE C263C: Controls of Robotic Systems.
+                        We were given a robotics kit that included several DYNAMIXEL stepper motors and were tasked with creating
+                        a system to demonstrate our understanding of controls as taught in the course. My group opted to create the 2R planar arm playing
+                        a game similar to air hockey or Pong shown here and in the video below.
+                        <br><br>
+                        <tab></tab> I was largely responsible for programming the robot's behavior with Python and implementing its vision processing with OpenCV.
+                        The video below shows the camera's view with key variables overlaid on the left as well as another view recorded seperately on the right.
+                        The graphics on the left include markers for the tracked ball position, predicted ball path, the end effector's desired position (yellow), 
+                        and the end effector's actual position, calculated from encoders (red).
+                    </p>
+                </div>
+
+                <div class = "article-media-section">
+                    <video class = "article-media-section-media acc-border" autoplay muted loop>
+                        <source src = "./showcase.mp4">
+                    </video>
+                </div>
+
+                <div class = "article-text">
+                    <p class = "text-standard">
+                        <tab></tab>In the video, several different control algorithms and gains are shown. Since the project was for a controls class, 
+                        we showed how the robot operates differently under different gains. As one would expect, increasing the proportional gain
+                        resulted in oscillations around the target position, while increasing the derivative gain caused stiffness.
+                        <br><br>
+                        <tab></tab>We can also see some performance issues related to hardware and implementation. The robot sometimes fails, even in positions
+                        where it should be able to reach and hit the ball in the right direction. This can be partly attributed to a fairly simple implementation
+                        for trajectory planning, which appears to especially struggle in scenarios where the ball is close 
+                        to the end effector and primarily moving vertically.
+                        <br><br>
+                        <tab></tab>Additionally, the camera we used was chosen for its low-cost, but it suffered from a delay which can be seen
+                        in the lag between the position of the end effector on the camera view and the red circle. The position of the red circle is calculated
+                        given the stepper motors' angular position measured by encoders, forward kinematics, and a frame conversion from meters to pixels. Whenever the arm makes 
+                        a rapid motion, we can see this lag clearly, suggesting the camera's view is notably delayed after the encoder angle readings. This limitation
+                        prevented adding complexity to the trajectory planning, since the tracked ball state will always have some lag.
+                        <br><br>
+                        <tab></tab>The materials used to build the
+                        arena also had some issues, as we could not assume perfectly inelastic collisions with the wall, or rely on the arena surface to provide 
+                        frictionless, slipless motion. This can be seen throughout the video and especially when the ball gets stuck in the middle of the arena, 
+                        despite a slight tilt allowing gravity to usually bring the ball back to towards the arm. This created unpredictable motion that also put
+                        contstraints on the complexity of trajectory planning.
+                    </p>
+                </div>
+
+                <div class = "article-text">
+                    <img class = "article-horizontal-media float-top-left acc-border" src = "./invdyn.png">
+                    <p class = "text-standard">
+                        <tab></tab>Several control algorithms were implemented for the arm, all derived from the inverse control dynamics loop 
+                        shown here from the course textbook, <i>Robotics: Modeling, Planning, and Control</i> by Siciliano, et. al.
+                        Simplfied inverse dynamics with average inertia ignores Christoffel terms (Coriolis and centrifugal forces, <i>n</i> in the diagram) and treats the
+                        inertial matrix <i>B</i> as a constant with respect to configuration, which is fairly appropriate for a planar arm.
+                        This allows us to calculate one matrix for all control steps, reducing computations per step.
+                        Inertial inverse dynamics does calculate the inertial matrix for the given configuration,
+                        adding complexity by requiring the inertia be calculated every step.
+                        Full inverse dynamics is just the entire loop as shown, with configuration-dependent inertia and Christoffel terms.
+                        From our testing, the simplest implementation of this control loop, with just a constant inertia matrix, was suitable enough for our purposes.
+                    </p>
+                </div>
+
+                <div class = "article-text">
+                    <p class = "text-standard">
+                        <tab></tab>The GitHub for this project is available
+                        <a class = "txt-link" href = "https://github.com/SidZal/MAE-C263C-S25-Project-Group-11" target = "_blank" ref = "noopener noreferrer">here</a>. 
+                        Thank you to my group members for their work on this project.
+                    </p>
+                </div>
+
+                <a class = "back-link-container" href = "/portfolio/">
+                    <p class = "back-link">
+                        BACK
+                    </p>
+                </a>
+
+            </div>
+            <!-- <div class = "article-header">
                 <p class = "header-txt">Tabletop Game Planar Arm</p>
                 <a class = "back-link" href = "/portfolio/">BACK</a>
             </div>
@@ -91,7 +172,7 @@
                     <a href = "https://github.com/SidZal/MAE-C263C-S25-Project-Group-11" target = "_blank" ref = "noopener noreferrer" class = "txt-link">here</a>. 
                     Thank you to my group members for their work on this project.
                 </p>
-            </div>
+            </div> -->
         </div>
 
         <div id = "footer"></div>

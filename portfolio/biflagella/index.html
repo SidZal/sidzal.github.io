@@ -18,36 +18,45 @@
         <div id = "banner" active-element = "portfolio"></div>
 
         <div class = "main" >
-            <div class = "article-header">
-                <p class = "header-txt">Bi-flagellated Robot</p>
-                <a class = "back-link" href = "/portfolio/">BACK</a>
-            </div>
-
-            <div class = "flex-entry">
-                <p class = "text-standard" style = "margin-right: 50px;">
-                    <tab></tab> As part of my work with the Structures-Computer Interaction Lab at UCLA, I designed and assembled the robot diagrammed in this schematic.
-                    It is a bio-inspired bi-flagellated robot that is designed to collect rotational data via the on-board IMU.
-                    Flagella are the coily tails of bacteria, which help them traverse fluid at their microscopic level, where viscous forces dominate inertial forces.
-                    At this scale, we used liquid glycerin to simulate the viscous enviornment of bacterial locomotion.
-                    The robot provided the experimental data to compare against simulation data, enabling future research around controlling these motions.
-                    In this research, control was limited to either manual control using joysticks as seen in the video below or preset procedures defined in a micro-controller.
+            <div class = "article-container">
+                <p class = "article-title text-title">
+                    Bi-flagellated Robot
                 </p>
-                <img class = "acc-border" style = "flex-basis: 500px; flex-shrink: 0;" src = "./schematic.png">
-            </div>
 
-            <div class = "flex-entry">
-                <video class = "acc-border" style = "max-width: 500px; margin: 30px;" autoplay muted loop>
-                    <source src = "./control.mp4">
-                </video>
-            </div>
+                <div class = "article-text">
+                    <img class = "article-square-media float-top-right acc-border" src = "./schematic.png">
+                    <p class = "text-standard">
+                        <tab></tab> As part of my work with the Structures-Computer Interaction Lab at UCLA, I designed and assembled the robot diagrammed in this schematic.
+                        It is a bio-inspired bi-flagellated robot that is designed to collect rotational data via the on-board IMU.
+                        Flagella are the coily tails of bacteria, which help them traverse fluid at their microscopic level, where viscous forces dominate inertial forces.
+                        At this scale, we used liquid glycerin to simulate the viscous enviornment of bacterial locomotion.
+                        <br><br>
+                        <tab></tab>The robot provided the experimental data to compare against simulation data, enabling future research around controlling these motions.
+                        In this research, control was limited to either manual control using joysticks as seen in the video below or preset procedures defined in a micro-controller.
+                    </p>
+                </div>
 
-            <div class = "flex-entry">
-                <p class = "text-standard">
-                    <tab></tab>This work was part of a paper studying attitude adjustment for bi-flagellated robots, which I presented at
-                    the 2024 IEEE RoboSoft Conference. The full paper can be found 
-                    <a href = "https://ieeexplore.ieee.org/document/10521926" target = "_blank" ref = "noopener noreferrer" class = "txt-link">here</a>. 
-                    Thank you to my direct supervisor, Zhuonan Hao, and our PI, Dr. Khalid Jawed, for their direction and guidance in this work.
-                </p>
+                <div class = "article-media-section">
+                    <video class = "article-media-section-media acc-border" autoplay muted loop>
+                        <source src = "./control.mp4">
+                    </video>
+                </div>
+
+                <div class = "article-text">
+                    <p class = "text-standard">
+                        <tab></tab>This work was part of a paper studying attitude adjustment for bi-flagellated robots, which I presented at
+                        the 2024 IEEE RoboSoft Conference. The full paper can be found 
+                        <a class = "txt-link" href = "https://ieeexplore.ieee.org/document/10521926" target = "_blank" ref = "noopener noreferrer">here</a>. 
+                        Thank you to my direct supervisor, Zhuonan Hao, and our PI, Dr. Khalid Jawed, for their direction and guidance in this work.
+                    </p>
+                </div>
+                
+                <a class = "back-link-container" href = "/portfolio/">
+                    <p class = "back-link">
+                        BACK
+                    </p>
+                </a>
+
             </div>
         </div>
 

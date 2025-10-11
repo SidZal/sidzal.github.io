@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>
+        GRUB Dual-Boot Hardware Switch - Siddharth Zalavadia
+    </title>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <style>
+        @import url("/general.css");
+        @import url("../article.css");
+    </style>
+
+    <body>
+        <div id = "banner" active-element = "portfolio"></div>
+
+        <div class = "main" >
+            <div class = "article-container">
+    
+                <p class = "article-title text-title">
+                    GRUB Dual-Boot Hardware Switch
+                </p>
+
+                <p class = "text-title article-subtitle">
+                    Motivation
+                </p>
+
+                <div class = "article-text">
+                    <div class = "article-media-container article-square-media float-top-right">
+                        <img class = "acc-border" src = "./grubmenu.png">
+                        <p class = "article-media-caption text-caption">
+                            GRUB Boot Menu
+                        </p>
+                    </div>
+                    <p class = "text-standard">
+                        <tab></tab>On my personal computer, I like to use both Linux and Windows. This is achieved by installing the operating systems (OS) on separate drives or partitions, then using a bootloader like GRUB to select which OS to boot into when the system powers on. This is known as dual-booting. 
+                        <br><br>
+                        <tab></tab>This setup has worked great for me, but a minor inconvenience that arises is that the bootloader must load up after the BIOS upon power-on/restart, and you have to wait for this to happen before making an OS selection in the digital GRUB menu. Given that I know which OS I want to boot into before powering the computer on, I want to make a physical switch that allows me to to make the selection and power on at the same time.
+                    </p>
+                    
+                </div>
+
+                <p class = "text-title article-subtitle">
+                    Background
+                </p>
+
+                <div class = "article-text">
+                    <div class = "article-media-container article-square-media float-top-left">
+                        <img class = "acc-border" src = "./hackadayswitch.png">
+                        <p class = "article-media-caption text-caption">
+                            Similar Project on Hackaday
+                        </p>
+                    </div>
+                    <p class = "text-standard">
+                        <tab></tab>Fortunately, I am not the first to want a physical OS selection. <a class = "txt-link" href = "https://www.gnu.org/software/grub/manual/grub/html_node/Vendor-power_002don-keys.html" target = "_blank" ref = "noopener noreferrer">Some laptops</a> have two power keys that GRUB can differentiate, but I don't believe this can be applied without a specialized motherboard. A more generalized approach is this <a class = "txt-link" href = "https://hackaday.io/project/179539-hardware-boot-selection-switch/" target = "_blank" ref = "noopener noreferrer">project</a> by Stephen Holdaway on Hackaday. To summarize, he uses a physical switch connected to a microcontroller with a USB connection to the motherboard. The microcontroller presents itself to GRUB as a readable device, and GRUB's bootup script is modified to read the switch position and select an OS accordingly. 
+                        <br><br>
+                        <tab></tab>I used this project as my primary point of reference, as it essentially does what I want, and programming a microcontroller allows for some flexibility in implementation.
+                    </p>
+
+                </div>
+
+                <p class = "text-title article-subtitle">
+                    Implementation
+                </p>
+
+                <div class ="article-text">
+                    <div class = "article-media-container article-square-media float-top-right">
+                        <img class = "acc-border" src = "./labeledwiring.png">
+                        <p class = "article-media-caption text-caption">
+                            Wiring Setup
+                        </p>
+                    </div>
+                    <p class = "text-standard">
+                        <tab></tab>I opted to get an STM32 "bluepill" board, so I can utilize the storage device code from the Hackaday project, which relies on <a class = "txt-link" href = "https://github.com/libopencm3/libopencm3" target = "_blank" ref = "noopener noreferrer">libopencm3</a>. As for the physical switch, my computer case, a Pure Base 600, has an external fan controller on the front PCB, already right next to the restart and power button. This 3-way switch allows you to set extra fans at 5V, 9V, or 12V. I have left it unconnected, so I figure it would be a convenient way to make an OS selection. If I can re-wire the electronics to make those 3 states readable to the microcontroller, I can have two options for Linux and Windows, then the third for the GRUB menu itself, which would still be useful for its other options.
+                        <br><br>
+                        <tab></tab>The fan controller takes 5V and 12V from a SATA cable and delivers either those or 9V from a regulator to potential extra fans. The microcontroller's logic operates at 3.3V, so the switch needs to essentially be re-mapped to a maximum of 3.3V. To achieve this, I can connect the 5V input to GND and 12V input to 3.3V, which results in a switch delivering 0V, 2.7V, and 3.3V at its 3 settings. These can be read by an analog pin on the microcontroller. In the picture here, you can see the PCB and microcontroller outside of the case.
+                    </p>
+                </div>  
+                <div class ="article-text">
+                    <div class = "article-media-container article-vertical-media float-top-left">
+                        <img class = "acc-border" src = "./mountcad.png">
+                        <p class = "article-media-caption text-caption">
+                            Mount in SolidWorks
+                        </p>
+                    </div>
+                    <p class = "text-standard">
+                        <tab></tab>On the software side, all I have to do is synthesize Holdaway's code with an analog to digital pin setup for the switch voltage output. For learning libopencm3, I found this useful <a class = "txt-link" href = "https://github.com/libopencm3/libopencm3-examples/blob/master/examples/stm32/f1/" target = "_blank" ref = "noopener noreferrer">repo</a> with plenty of example code. I also modified the function that is called when GRUB reads the microcontroller, adding to it a signal to enter the GRUB menu, in addition to the signals for Linux and Windows.
+                        <br><br>
+                        <tab></tab>I also wanted to embed the microcontroller inside the case, so I designed a mount in SolidWorks to be 3D-printed, shown here with a simple latch to keep the microcontroller in place. The mounting holes allow it to be mounted it on one of the unused 3.5" bays in the case.
+                    </p>
+                </div>
+
+                <div class = "article-text">
+
+                    <p class = "text-standard">
+                        <tab></tab>In the pictures below, you can see the computer's front panel re-assembled and the microcontroller mounted inside the computer. The switch is to the left of the power button. To label the associated OS, I stuck a green bindi for Linux and a blue bindi for Windows to the case. As stated earlier, there is also the third option in the middle for the GRUB menu, represented by the printed gray circle. As for the mounting, a twist tie keeps it in place, and fits in among my mildy managed cables. It has been working great, and I am glad to have learned a lot about STM32 and libopencm3 specifically in the process.
+                    </p>
+                </div>
+
+                <div class = "article-media-section">
+                    <img class = "article-media-section-media acc-border" src="./frontview.jpg">                                                   
+                    <img class = "article-media-section-media acc-border" src="./mounted.jpg">                                                   
+
+                </div>
+
+                <a class = "back-link-container" href = "/portfolio/">
+                    <p class = "back-link">
+                        BACK
+                    </p>
+                </a>
+
+            </div>
+        </div>
+
+        <div id = "footer"></div>
+    </body>
+    
+    <script src = "/pagetemplate.js"></script>
+</html>

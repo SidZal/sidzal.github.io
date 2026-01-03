@@ -1,11 +1,11 @@
 /* VARIABLES */
 :root {
-    --header-bg: #363636;
-    --footer-bg: #6b6b6b;
-    --bg-general: #181818;
+    --header-bg: #1d1c22;
+    --footer-bg: #25282d;
+    --bg-general: #121416;
     --accent: rgb(153, 179, 161);
     --text-header: #ffffff;
-    --text-midlight: #d8d8d8;
+    --text-midlight: #c4c4c4;
     --text-lowlight: #6e6e6e;
     --text-link: #70cdda;
 }
@@ -34,7 +34,7 @@ html, body {
 .banner-box {
     position: relative;
     height: 100%;
-    width: 1180px;
+    width: 75%;
     margin: 0 30px;
 
     display: flex;
@@ -150,6 +150,7 @@ html, body {
 
 .footnote {
     text-align: center;
+    font-family: title;
     
     color:var(--text-header);
     padding: 10px 0 0 0;
@@ -176,7 +177,7 @@ html, body {
 /* TEXT */
 @font-face {
     font-family: standard;
-    src: url(/fonts/Lato-Regular.ttf)
+    src: url(/fonts/Inter-VariableFont.ttf)
 }
 .text-standard {
     font-family: standard, sans-serif;
@@ -194,13 +195,27 @@ html, body {
 
 @font-face {
     font-family: title;
-    src: url(/fonts/FiraSans-Black.ttf)
+    src: url(/fonts/Lato-Regular.ttf)
 }
 .text-title {
     font-family: title, sans-serif;
     font-size: 40px;
+    font-weight: bold;
     color: var(--text-header);
     margin: 0;
+}
+
+@font-face {
+    font-family: mosaic-title;
+    src: url(/fonts/Plaster-Regular.ttf)
+}
+.mosaic-name {
+    font-family: mosaic-title;
+    color: var(--text-header);
+    font-size: 5vw;
+    margin: 0;
+    /* start with 0 opacity in case name loads first */
+    opacity: 0;
 }
 
 .txt-link {
@@ -220,10 +235,12 @@ tab {
 
     max-width: 1180px;
 
+    padding: 0 60px;
+
     margin: 20px auto 65px;
 
     opacity: 0;
-    animation: fadeIn 400ms forwards;
+    animation: fadeIn .6s .1s forwards;
 }
 
 @keyframes fadeIn {

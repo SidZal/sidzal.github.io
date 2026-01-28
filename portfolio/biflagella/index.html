@@ -24,15 +24,33 @@
                 </p>
 
                 <div class = "article-text">
-                    <img class = "article-square-media float-top-right acc-border" src = "./schematic.png">
+                    <div class = "article-media-container article-square-media float-top-right">
+                        <img class = "acc-border" src = "./schematic.png">
+                        <p class = "article-media-caption text-caption">
+                            Robot Schematic
+                        </p>
+                    </div>
                     <p class = "text-standard">
-                        <tab></tab> As part of my work with the Structures-Computer Interaction Lab at UCLA, I designed and assembled the robot diagrammed in this schematic.
-                        It is a bio-inspired bi-flagellated robot that is designed to collect rotational data via the on-board IMU.
-                        Flagella are the coily tails of bacteria, which help them traverse fluid at their microscopic level, where viscous forces dominate inertial forces.
-                        At this scale, we used liquid glycerin to simulate the viscous enviornment of bacterial locomotion.
+                        <tab></tab> As part of my work with the Structures-Computer Interaction Lab at UCLA, I designed and assembled the robot diagrammed in this schematic. It is a bio-inspired, bi-flagellated robot that is designed to collect rotational data via the on-board IMU. Flagella are the coily tails of bacteria, which help them traverse fluid at their microscopic level, where viscous forces dominate inertial forces. For this experiment, we scaled this system up and used liquid glycerin to simulate the viscous enviornment of bacterial locomotion.
                         <br><br>
-                        <tab></tab>The robot provided the experimental data to compare against simulation data, enabling future research around controlling these motions.
-                        In this research, control was limited to either manual control using joysticks as seen in the video below or preset procedures defined in a micro-controller.
+                        <tab></tab>The on-board IMU provided linear acceleration along 3 axes and angular velocity along 3 axes. I combined this data with a complementary filter, integrating angular velocity to track angular position and adjusting with the measured direction of gravity to cancel out drift from integrated noise. The tracked angular position, or attitude, can then be used to validate simulation of flagella locomotion theorized by previous lab work.
+                </div>
+
+                <div class = "article-text">
+                    <div class = "article-media-container article-vertical-media float-top-left">
+                        <video class = "article-media-section-media acc-border" autoplay muted loop>
+                            <source src = "./cad_explosion.mp4">
+                        </video>
+                        <p class = "article-media-caption text-caption">
+                            Design in SolidWorks
+                        </p>
+                    </div>
+                    <p class = "text-standard">
+                        <tab></tab>In this CAD explosion, you can see the assembly of my design in SolidWorks. One of the driving considerations of this design were using parameters to set specific dimensions like the distance between motor shafts. To achieve this, I ensured the parametric design tree in SolidWorks was organized and well-defined for adjustments to this parameter. The cylindrical body was also important to ensure the center of mass was not easily offset from the central axis by imperfections. This shape also provides space for fully on-board electronics in future iterations.
+                        <br><br>
+                        <tab></tab>I designed the body to be 3D-printed with minimal post-processing needed. The flagella could also 3D-printed for rigidity, though the research also explores the use of soft flagella that enables unique locomotive properties.
+                        <br><br>
+                        <tab></tab>In the initial experiment, control was limited to either manual control using joysticks or open-loop control defined in a micro-controller. In the video below, you can see my setup in use with joysticks connected to microcontrollers, drivers, and power outside of the glycerin tank. The wires coming out of the tank connect the IMU and motors to the rest of the electronics. You can also see the soft variation of flagella adjusting shape as they move.
                     </p>
                 </div>
 
@@ -43,10 +61,59 @@
                 </div>
 
                 <div class = "article-text">
+                    <div class = "article-media-container article-small-square-media float-top-right">
+                        <img class = "acc-border" src = "./results.png">
+                        <p class = "article-media-caption text-caption">
+                            Data from Simulation vs. Experiment
+                        </p>
+                    </div>
                     <p class = "text-standard">
                         <tab></tab>This work was part of a paper studying attitude adjustment for bi-flagellated robots, which I presented at
-                        the 2024 IEEE RoboSoft Conference. The full paper can be found 
+                        the 2024 IEEE RoboSoft Conference in San Diego. The full paper can be found 
                         <a class = "txt-link" href = "https://ieeexplore.ieee.org/document/10521926" target = "_blank" ref = "noopener noreferrer">here</a>. 
+                        <br><br>
+                        <tab></tab>The graphs shown here are results from the paper demonstrating our findings in the similarity between the simulated and experimental steady state angular position of the system with both actuators operating at the given set of angular velocities. 
+                        <br><br>
+                        <tab></tab>The notable similarities between the data suggest reliable and re-producible attitude adjustment is achievable with bi-flagellated locomotion when controlling speed on each actuator. This sets up future work in controlling this behavior when nevigating viscous environments.
+                    </p>
+                </div>
+
+                <p class = "text-title article-subtitle">
+                    Untethered Variation
+                </p>
+
+                <div class = "article-text">
+                    <div class = "article-media-container article-vertical-media float-top-left">
+                        <video class = "acc-border" autoplay muted loop>
+                            <source src = "./untethered_cad_exp.mp4">
+                        </video>
+                        <p class = "article-media-caption text-caption">
+                            Untethered Design in SolidWorks
+                        </p>
+                    </div>
+                    <p class = "text-standard">
+                        <tab></tab>As part of the planned future work for the overarching project, I began implementing on-board electronics for an untethered version of the robot. In this CAD view, you can can see how three boards are tightly fitted into the inside of the cylindrical body: a micro-controller (Arduino Nano), motor driver, and IMU. A LiPo battery is fitted on the outside of the body to power the system. This version also included motor encoders at the top end of the motor bodies, enclosed within the body. This addition allowed me to implement PID control of the actuator's speed. On the bottom, between the flagella, there is a screw cap that allows for adjustments to the volume to account for buoyancy and adds space for counterweights, similar to the guiding principles of my <a class = "txt-link" href = "/portfolio/hover/">buoyancy engine project</a>. I designed the body and caps to be 3D-printed and soldered connections between the electronics such that it can all fit inside the body.
+                        <br><br>
+                        <tab></tab>In the video below, you can see the the built robot operating in the same glycerin tank, this time without the need for wires coming out of the tank or a ball bearing to fix it in place. The motors are hard-coded to run at a set speed, with one side alternating between a counter-clockwise and clockwise direction. When both actuators are operating in the same direction, the system rotates about the central axis. When the actuators operate in opposite directions, the system remains in place.
+                        <br><br>
+                        <tab></tab>I ended up moving to different projects after this, so this was one of the final builds I made for the lab's flagellum locomotion research. Further exploration of this topic would have explored more precise tuning of the balance between weight and buoyancy. I would also consider the need for wireless data collection or commands through glycerin, and more sophisticated closed-loop control to obtain certain attitudes.
+                    </p>
+                </div>
+
+                <div class = "article-media-section">
+                    <div class = "article-media-container article-wide-media">
+                        <video class = "acc-border" autoplay muted loop>
+                            <source src = "./untethered_video.mp4">
+                        </video>
+                        <p class = "article-media-caption text-caption">
+                            Untethered Robot Operation
+                        </p>
+                    </div>
+                    
+                </div>
+
+                <div class = "article-text">
+                    <p class = "text-standard">
                         Thank you to my direct supervisor, Zhuonan Hao, and our PI, Dr. Khalid Jawed, for their direction and guidance in this work.
                     </p>
                 </div>
